@@ -17,9 +17,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(  NSDictionary *)launchOptions {
 
     ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-
-        configuration.applicationId = @"ggKQqFWf3UOSxwNTz02Diuh4zd7sApTVnO5Tm4cB";
-        configuration.clientKey = @"pAUrKsMvsqUNsm14ylpGbJZUDK7b1NUSd68gF0c0";
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        NSString *key = [dict objectForKey:@"applicationId"];
+        NSString *secret = [dict objectForKey:@"clientKey"];
+        
+        configuration.applicationId = secret;
+        configuration.clientKey = key;
         configuration.server = @"https://parseapi.back4app.com";
     }];
 
@@ -27,7 +32,7 @@
     
     PFObject *profile = [PFObject objectWithClassName:@"profile"];
     profile[@"username"] = @"as123";
-    profile[@"screenName"] = @"Abbi Shilts";
+    profile[@"screenName"] = @"Abbi_Shilts";
     profile[@"followers"] = @500;
     [profile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
