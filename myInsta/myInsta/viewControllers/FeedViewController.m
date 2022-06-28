@@ -19,6 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+- (IBAction)postPhoto:(id)sender {
+    
+    [self performSegueWithIdentifier:@"postPhoto" sender:nil];
+}
 
 - (IBAction)logout:(id)sender {
     SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
