@@ -21,7 +21,7 @@
 
 - (IBAction)signup:(id)sender {
     
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing field(s)" message:@"Loggiing in requires all fields to be filled" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing field(s)" message:@"Logging in requires all fields to be filled" preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
         [alert addAction:okAction];
         if ([self.username.text isEqual:@""] || [self.password.text isEqual:@""]){

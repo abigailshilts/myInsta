@@ -7,7 +7,7 @@
 
 #import "FeedViewController.h"
 #import <Parse/Parse.h>
-#import "AppDelegate.h"
+#import "SceneDelegate.h"
 
 @interface FeedViewController ()
 
@@ -21,11 +21,11 @@
 }
 
 - (IBAction)logout:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:main bundle:nil];
+    SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *loginViewController =
-        [storyboard instantiateViewControllerWithIdentifier:LoginViewController];
-    appDelegate.window.rootViewController = loginViewController;
+        [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    mySceneDelegate.window.rootViewController = loginViewController;
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {}];
 }
 

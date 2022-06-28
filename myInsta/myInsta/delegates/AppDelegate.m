@@ -23,8 +23,8 @@
         NSString *key = [dict objectForKey:@"applicationId"];
         NSString *secret = [dict objectForKey:@"clientKey"];
         
-        configuration.applicationId = secret;
-        configuration.clientKey = key;
+        configuration.applicationId = key;
+        configuration.clientKey = secret;
         configuration.server = @"https://parseapi.back4app.com";
     }];
 
