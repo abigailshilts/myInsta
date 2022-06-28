@@ -21,6 +21,8 @@
 		48CCC4D9286A7802000D5612 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48CCC4D8286A7802000D5612 /* Keys.plist */; };
 		48CCC4E2286B71B0000D5612 /* PostingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E1286B71B0000D5612 /* PostingPhotoViewController.m */; };
 		48CCC4E5286B784B000D5612 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E4286B784B000D5612 /* Post.m */; };
+		48CCC4E8286BA078000D5612 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E7286BA078000D5612 /* PostCell.m */; };
+		48CCC4EB286BB7D9000D5612 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4EA286BB7D9000D5612 /* DetailsViewController.m */; };
 		93C85BA30478A90F8FDB522E /* Pods_myInsta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EA371EB1CC083A0C219267 /* Pods_myInsta.framework */; };
 		A5272D00A84E480BE11EBF3A /* Pods_myInsta_myInstaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E99D00F7993B241B4851F8 /* Pods_myInsta_myInstaUITests.framework */; };
 		C2B1AD71619CDE1DAEE6DCAF /* Pods_myInstaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DE1BF31AB27ADCC40398AB /* Pods_myInstaTests.framework */; };
@@ -71,6 +73,10 @@
 		48CCC4E1286B71B0000D5612 /* PostingPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostingPhotoViewController.m; sourceTree = "<group>"; };
 		48CCC4E3286B784B000D5612 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		48CCC4E4286B784B000D5612 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		48CCC4E6286BA078000D5612 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		48CCC4E7286BA078000D5612 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		48CCC4E9286BB7D9000D5612 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		48CCC4EA286BB7D9000D5612 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		4FFE630A7647A15E6B045E22 /* Pods-myInsta-myInstaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myInsta-myInstaUITests.release.xcconfig"; path = "Target Support Files/Pods-myInsta-myInstaUITests/Pods-myInsta-myInstaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		59DE1BF31AB27ADCC40398AB /* Pods_myInstaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myInstaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D31C6F5956445341F5D9E7C /* Pods-myInstaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myInstaTests.debug.xcconfig"; path = "Target Support Files/Pods-myInstaTests/Pods-myInstaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 				48CCC4B0286A4AE9000D5612 /* main.m */,
 				48CCC4E3286B784B000D5612 /* Post.h */,
 				48CCC4E4286B784B000D5612 /* Post.m */,
+				48CCC4E6286BA078000D5612 /* PostCell.h */,
+				48CCC4E7286BA078000D5612 /* PostCell.m */,
 			);
 			path = myInsta;
 			sourceTree = "<group>";
@@ -193,6 +201,8 @@
 				48CCC4D6286A708C000D5612 /* FeedViewController.m */,
 				48CCC4E0286B71B0000D5612 /* PostingPhotoViewController.h */,
 				48CCC4E1286B71B0000D5612 /* PostingPhotoViewController.m */,
+				48CCC4E9286BB7D9000D5612 /* DetailsViewController.h */,
+				48CCC4EA286BB7D9000D5612 /* DetailsViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -452,8 +462,10 @@
 				48CCC4A6286A4AE8000D5612 /* ViewController.m in Sources */,
 				48CCC4D7286A708C000D5612 /* FeedViewController.m in Sources */,
 				48CCC4E2286B71B0000D5612 /* PostingPhotoViewController.m in Sources */,
+				48CCC4E8286BA078000D5612 /* PostCell.m in Sources */,
 				48CCC4A0286A4AE8000D5612 /* AppDelegate.m in Sources */,
 				48CCC4B1286A4AE9000D5612 /* main.m in Sources */,
+				48CCC4EB286BB7D9000D5612 /* DetailsViewController.m in Sources */,
 				48CCC4A3286A4AE8000D5612 /* SceneDelegate.m in Sources */,
 				48CCC4E5286B784B000D5612 /* Post.m in Sources */,
 			);

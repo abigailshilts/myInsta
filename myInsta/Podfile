@@ -7,6 +7,7 @@ target 'myInsta' do
 
   # Pods for myInsta
   pod 'Parse'
+  pod 'AFNetworking'
 
 
   target 'myInstaTests' do
