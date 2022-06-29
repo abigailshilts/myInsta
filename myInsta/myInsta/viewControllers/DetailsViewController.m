@@ -30,6 +30,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)back:(id)sender {
+    [self performSegueWithIdentifier:@"returnFromDetails" sender:nil];
+}
+
 /*
 #pragma mark - Navigation
 

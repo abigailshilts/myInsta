@@ -25,7 +25,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.rowHeight = 500;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self query];
     
@@ -86,11 +86,13 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *senderIndex = [self.tableView indexPathForCell: sender];
-    UINavigationController *navigationVC = [segue destinationViewController];
-    DetailsViewController *detailVC = navigationVC.topViewController;
-    Post *post = self.arrayOfPosts[senderIndex.row];
-    detailVC.passedData = post;
+    if (![segue.identifier isEqualToString:@"postPhoto"]){
+        NSIndexPath *senderIndex = [self.tableView indexPathForCell: sender];
+        UINavigationController *navigationVC = [segue destinationViewController];
+        DetailsViewController *detailVC = navigationVC.topViewController;
+        Post *post = self.arrayOfPosts[senderIndex.row];
+        detailVC.passedData = post;
+    }
 }
 
 
