@@ -39,16 +39,15 @@
 - (IBAction)makePost:(id)sender {
     [Post postUserImage:self.imgForPost withCaption:self.caption.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         NSLog(@"posted photo!");
-        [self performSegueWithIdentifier:@"closeCreatePost" sender:nil];
     }];
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     
     originalImage = [self resizeImage:originalImage withSize:CGSizeMake(580,580)];

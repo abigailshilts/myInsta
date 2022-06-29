@@ -41,12 +41,19 @@
 -(void)query {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
+    if (self.arrayOfPosts != nil){
+        [query whereKey:@"createdAt" lessThan:self.arrayOfPosts[self.arrayOfPosts.count-1].createdAt];
+    }
     query.limit = 20;
 
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
-            self.arrayOfPosts = posts;
+            if (self.arrayOfPosts == nil){ 
+                self.arrayOfPosts = posts;
+            } else {
+                self.arrayOfPosts = [self.arrayOfPosts arrayByAddingObjectsFromArray:posts];
+            }
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -81,6 +88,12 @@
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {}];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
+    forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == (self.arrayOfPosts.count - 2)){
+        [self query];
+    }
+}
 
 #pragma mark - Navigation
 
