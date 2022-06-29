@@ -31,7 +31,7 @@
 }
 
 - (IBAction)back:(id)sender {
-    [self performSegueWithIdentifier:@"returnFromDetails" sender:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

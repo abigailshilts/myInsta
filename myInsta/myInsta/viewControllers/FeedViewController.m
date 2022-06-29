@@ -27,6 +27,8 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
+    [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"headerViewIdentifier"];
+    
     [self query];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -41,6 +43,7 @@
 -(void)query {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
     if (self.arrayOfPosts != nil){
         [query whereKey:@"createdAt" lessThan:self.arrayOfPosts[self.arrayOfPosts.count-1].createdAt];
     }
@@ -65,7 +68,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"postCell" forIndexPath:indexPath];
     
-    Post *post = self.arrayOfPosts[indexPath.row];
+    Post *post = self.arrayOfPosts[indexPath.section];
     
     NSString *link = post.image.url;
     NSURL *url = [NSURL URLWithString:link];
@@ -76,7 +79,26 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.arrayOfPosts.count;
+    
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"headerViewIdentifier"];
+    Post *post =  self.arrayOfPosts[section];
+    PFUser *user = post.author;
+    NSString *username = [user.username stringByAppendingString:@"~"];
+    NSString *whenMade = [NSString stringWithFormat:@"%@", post.createdAt];
+    header.textLabel.text = [username stringByAppendingString:whenMade];
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
 }
 
 - (IBAction)logout:(id)sender {
