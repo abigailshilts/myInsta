@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		48CCC4A0286A4AE8000D5612 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC49F286A4AE8000D5612 /* AppDelegate.m */; };
 		48CCC4A3286A4AE8000D5612 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4A2286A4AE8000D5612 /* SceneDelegate.m */; };
-		48CCC4A6286A4AE8000D5612 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4A5286A4AE8000D5612 /* ViewController.m */; };
+		48CCC4A6286A4AE8000D5612 /* MIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4A5286A4AE8000D5612 /* MIViewController.m */; };
 		48CCC4A9286A4AE8000D5612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48CCC4A7286A4AE8000D5612 /* Main.storyboard */; };
 		48CCC4AB286A4AE9000D5612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CCC4AA286A4AE9000D5612 /* Assets.xcassets */; };
 		48CCC4AE286A4AE9000D5612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48CCC4AC286A4AE9000D5612 /* LaunchScreen.storyboard */; };
@@ -17,14 +17,14 @@
 		48CCC4BB286A4AE9000D5612 /* myInstaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4BA286A4AE9000D5612 /* myInstaTests.m */; };
 		48CCC4C5286A4AE9000D5612 /* myInstaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4C4286A4AE9000D5612 /* myInstaUITests.m */; };
 		48CCC4C7286A4AE9000D5612 /* myInstaUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4C6286A4AE9000D5612 /* myInstaUITestsLaunchTests.m */; };
-		48CCC4D7286A708C000D5612 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4D6286A708C000D5612 /* FeedViewController.m */; };
+		48CCC4D7286A708C000D5612 /* MIFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4D6286A708C000D5612 /* MIFeedViewController.m */; };
 		48CCC4D9286A7802000D5612 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48CCC4D8286A7802000D5612 /* Keys.plist */; };
-		48CCC4E2286B71B0000D5612 /* PostingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E1286B71B0000D5612 /* PostingPhotoViewController.m */; };
-		48CCC4E5286B784B000D5612 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E4286B784B000D5612 /* Post.m */; };
-		48CCC4E8286BA078000D5612 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E7286BA078000D5612 /* PostCell.m */; };
-		48CCC4EB286BB7D9000D5612 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4EA286BB7D9000D5612 /* DetailsViewController.m */; };
-		48CCC4F6286CEFE1000D5612 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4F5286CEFE1000D5612 /* ProfileViewController.m */; };
-		48CCC4F9286CF907000D5612 /* ProfCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4F8286CF907000D5612 /* ProfCell.m */; };
+		48CCC4E2286B71B0000D5612 /* MIPostingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E1286B71B0000D5612 /* MIPostingPhotoViewController.m */; };
+		48CCC4E5286B784B000D5612 /* MIPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E4286B784B000D5612 /* MIPost.m */; };
+		48CCC4E8286BA078000D5612 /* MIPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4E7286BA078000D5612 /* MIPostCell.m */; };
+		48CCC4EB286BB7D9000D5612 /* MIDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4EA286BB7D9000D5612 /* MIDetailsViewController.m */; };
+		48CCC4F6286CEFE1000D5612 /* MIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4F5286CEFE1000D5612 /* MIProfileViewController.m */; };
+		48CCC4F9286CF907000D5612 /* MIProfCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CCC4F8286CF907000D5612 /* MIProfCell.m */; };
 		93C85BA30478A90F8FDB522E /* Pods_myInsta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EA371EB1CC083A0C219267 /* Pods_myInsta.framework */; };
 		A5272D00A84E480BE11EBF3A /* Pods_myInsta_myInstaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E99D00F7993B241B4851F8 /* Pods_myInsta_myInstaUITests.framework */; };
 		C2B1AD71619CDE1DAEE6DCAF /* Pods_myInstaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DE1BF31AB27ADCC40398AB /* Pods_myInstaTests.framework */; };
@@ -56,8 +56,8 @@
 		48CCC49F286A4AE8000D5612 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		48CCC4A1286A4AE8000D5612 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		48CCC4A2286A4AE8000D5612 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		48CCC4A4286A4AE8000D5612 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		48CCC4A5286A4AE8000D5612 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		48CCC4A4286A4AE8000D5612 /* MIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIViewController.h; sourceTree = "<group>"; };
+		48CCC4A5286A4AE8000D5612 /* MIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIViewController.m; sourceTree = "<group>"; };
 		48CCC4A8286A4AE8000D5612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48CCC4AA286A4AE9000D5612 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48CCC4AD286A4AE9000D5612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,21 +68,22 @@
 		48CCC4C0286A4AE9000D5612 /* myInstaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myInstaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CCC4C4286A4AE9000D5612 /* myInstaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myInstaUITests.m; sourceTree = "<group>"; };
 		48CCC4C6286A4AE9000D5612 /* myInstaUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myInstaUITestsLaunchTests.m; sourceTree = "<group>"; };
-		48CCC4D5286A708C000D5612 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
-		48CCC4D6286A708C000D5612 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		48CCC4D5286A708C000D5612 /* MIFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIFeedViewController.h; sourceTree = "<group>"; };
+		48CCC4D6286A708C000D5612 /* MIFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIFeedViewController.m; sourceTree = "<group>"; };
 		48CCC4D8286A7802000D5612 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
-		48CCC4E0286B71B0000D5612 /* PostingPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostingPhotoViewController.h; sourceTree = "<group>"; };
-		48CCC4E1286B71B0000D5612 /* PostingPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostingPhotoViewController.m; sourceTree = "<group>"; };
-		48CCC4E3286B784B000D5612 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		48CCC4E4286B784B000D5612 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
-		48CCC4E6286BA078000D5612 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
-		48CCC4E7286BA078000D5612 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
-		48CCC4E9286BB7D9000D5612 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
-		48CCC4EA286BB7D9000D5612 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		48CCC4F4286CEFE1000D5612 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		48CCC4F5286CEFE1000D5612 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		48CCC4F7286CF907000D5612 /* ProfCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfCell.h; sourceTree = "<group>"; };
-		48CCC4F8286CF907000D5612 /* ProfCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfCell.m; sourceTree = "<group>"; };
+		48CCC4E0286B71B0000D5612 /* MIPostingPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIPostingPhotoViewController.h; sourceTree = "<group>"; };
+		48CCC4E1286B71B0000D5612 /* MIPostingPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIPostingPhotoViewController.m; sourceTree = "<group>"; };
+		48CCC4E3286B784B000D5612 /* MIPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIPost.h; sourceTree = "<group>"; };
+		48CCC4E4286B784B000D5612 /* MIPost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIPost.m; sourceTree = "<group>"; };
+		48CCC4E6286BA078000D5612 /* MIPostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIPostCell.h; sourceTree = "<group>"; };
+		48CCC4E7286BA078000D5612 /* MIPostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIPostCell.m; sourceTree = "<group>"; };
+		48CCC4E9286BB7D9000D5612 /* MIDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDetailsViewController.h; sourceTree = "<group>"; };
+		48CCC4EA286BB7D9000D5612 /* MIDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIDetailsViewController.m; sourceTree = "<group>"; };
+		48CCC4F4286CEFE1000D5612 /* MIProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIProfileViewController.h; sourceTree = "<group>"; };
+		48CCC4F5286CEFE1000D5612 /* MIProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIProfileViewController.m; sourceTree = "<group>"; };
+		48CCC4F7286CF907000D5612 /* MIProfCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIProfCell.h; sourceTree = "<group>"; };
+		48CCC4F8286CF907000D5612 /* MIProfCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIProfCell.m; sourceTree = "<group>"; };
+		48CCC4FA286D1A3A000D5612 /* stringsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringsList.h; sourceTree = "<group>"; };
 		4FFE630A7647A15E6B045E22 /* Pods-myInsta-myInstaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myInsta-myInstaUITests.release.xcconfig"; path = "Target Support Files/Pods-myInsta-myInstaUITests/Pods-myInsta-myInstaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		59DE1BF31AB27ADCC40398AB /* Pods_myInstaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myInstaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D31C6F5956445341F5D9E7C /* Pods-myInstaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myInstaTests.debug.xcconfig"; path = "Target Support Files/Pods-myInstaTests/Pods-myInstaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,12 +162,13 @@
 				48CCC4AC286A4AE9000D5612 /* LaunchScreen.storyboard */,
 				48CCC4AF286A4AE9000D5612 /* Info.plist */,
 				48CCC4B0286A4AE9000D5612 /* main.m */,
-				48CCC4E3286B784B000D5612 /* Post.h */,
-				48CCC4E4286B784B000D5612 /* Post.m */,
-				48CCC4E6286BA078000D5612 /* PostCell.h */,
-				48CCC4E7286BA078000D5612 /* PostCell.m */,
-				48CCC4F7286CF907000D5612 /* ProfCell.h */,
-				48CCC4F8286CF907000D5612 /* ProfCell.m */,
+				48CCC4E3286B784B000D5612 /* MIPost.h */,
+				48CCC4E4286B784B000D5612 /* MIPost.m */,
+				48CCC4E6286BA078000D5612 /* MIPostCell.h */,
+				48CCC4E7286BA078000D5612 /* MIPostCell.m */,
+				48CCC4F7286CF907000D5612 /* MIProfCell.h */,
+				48CCC4F8286CF907000D5612 /* MIProfCell.m */,
+				48CCC4FA286D1A3A000D5612 /* stringsList.h */,
 			);
 			path = myInsta;
 			sourceTree = "<group>";
@@ -203,16 +205,16 @@
 		48CCC4D4286A6FEF000D5612 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				48CCC4A4286A4AE8000D5612 /* ViewController.h */,
-				48CCC4A5286A4AE8000D5612 /* ViewController.m */,
-				48CCC4D5286A708C000D5612 /* FeedViewController.h */,
-				48CCC4D6286A708C000D5612 /* FeedViewController.m */,
-				48CCC4E0286B71B0000D5612 /* PostingPhotoViewController.h */,
-				48CCC4E1286B71B0000D5612 /* PostingPhotoViewController.m */,
-				48CCC4E9286BB7D9000D5612 /* DetailsViewController.h */,
-				48CCC4EA286BB7D9000D5612 /* DetailsViewController.m */,
-				48CCC4F4286CEFE1000D5612 /* ProfileViewController.h */,
-				48CCC4F5286CEFE1000D5612 /* ProfileViewController.m */,
+				48CCC4A4286A4AE8000D5612 /* MIViewController.h */,
+				48CCC4A5286A4AE8000D5612 /* MIViewController.m */,
+				48CCC4D5286A708C000D5612 /* MIFeedViewController.h */,
+				48CCC4D6286A708C000D5612 /* MIFeedViewController.m */,
+				48CCC4E0286B71B0000D5612 /* MIPostingPhotoViewController.h */,
+				48CCC4E1286B71B0000D5612 /* MIPostingPhotoViewController.m */,
+				48CCC4E9286BB7D9000D5612 /* MIDetailsViewController.h */,
+				48CCC4EA286BB7D9000D5612 /* MIDetailsViewController.m */,
+				48CCC4F4286CEFE1000D5612 /* MIProfileViewController.h */,
+				48CCC4F5286CEFE1000D5612 /* MIProfileViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -469,17 +471,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48CCC4A6286A4AE8000D5612 /* ViewController.m in Sources */,
-				48CCC4D7286A708C000D5612 /* FeedViewController.m in Sources */,
-				48CCC4E2286B71B0000D5612 /* PostingPhotoViewController.m in Sources */,
-				48CCC4F9286CF907000D5612 /* ProfCell.m in Sources */,
-				48CCC4E8286BA078000D5612 /* PostCell.m in Sources */,
+				48CCC4A6286A4AE8000D5612 /* MIViewController.m in Sources */,
+				48CCC4D7286A708C000D5612 /* MIFeedViewController.m in Sources */,
+				48CCC4E2286B71B0000D5612 /* MIPostingPhotoViewController.m in Sources */,
+				48CCC4F9286CF907000D5612 /* MIProfCell.m in Sources */,
+				48CCC4E8286BA078000D5612 /* MIPostCell.m in Sources */,
 				48CCC4A0286A4AE8000D5612 /* AppDelegate.m in Sources */,
 				48CCC4B1286A4AE9000D5612 /* main.m in Sources */,
-				48CCC4EB286BB7D9000D5612 /* DetailsViewController.m in Sources */,
-				48CCC4F6286CEFE1000D5612 /* ProfileViewController.m in Sources */,
+				48CCC4EB286BB7D9000D5612 /* MIDetailsViewController.m in Sources */,
+				48CCC4F6286CEFE1000D5612 /* MIProfileViewController.m in Sources */,
 				48CCC4A3286A4AE8000D5612 /* SceneDelegate.m in Sources */,
-				48CCC4E5286B784B000D5612 /* Post.m in Sources */,
+				48CCC4E5286B784B000D5612 /* MIPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

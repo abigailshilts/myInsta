@@ -5,9 +5,9 @@
 //  Created by Abigail Shilts on 6/29/22.
 //
 
-#import "ProfCell.h"
+#import "MIProfCell.h"
 
-@implementation ProfCell
+@implementation MIProfCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

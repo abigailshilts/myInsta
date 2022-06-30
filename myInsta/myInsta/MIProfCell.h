@@ -1,15 +1,15 @@
 //
-//  PostCell.h
+//  ProfCell.h
 //  myInsta
 //
-//  Created by Abigail Shilts on 6/28/22.
+//  Created by Abigail Shilts on 6/29/22.
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostCell : UITableViewCell
+@interface MIProfCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *postImg;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 

@@ -5,9 +5,10 @@
 //  Created by Abigail Shilts on 6/28/22.
 //
 
-#import "Post.h"
+#import "MIPost.h"
+#import "stringsList.h"
 
-@implementation Post
+@implementation MIPost
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
@@ -17,12 +18,13 @@
 @dynamic commentCount;
 
 + (nonnull NSString *)parseClassName {
-    return @"Post";
+    return postStr;
 }
 
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postUserImage: ( UIImage * _Nullable )image withCaption:
+    ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
-    Post *newPost = [Post new];
+    MIPost *newPost = [MIPost new];
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
@@ -45,7 +47,7 @@
         return nil;
     }
     
-    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+    return [PFFileObject fileObjectWithName:ipng data:imageData];
 }
 
 @end

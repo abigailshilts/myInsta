@@ -11,7 +11,7 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MIViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
         <!--FeedViewController-->
         <scene sceneID="EnA-gE-kLb">
             <objects>
-                <viewController storyboardIdentifier="FeedViewController" title="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cKg-R5-tqW" customClass="FeedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" title="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cKg-R5-tqW" customClass="MIFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4u2-zw-yQu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="462" id="P6I-IB-Csx" customClass="PostCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="462" id="P6I-IB-Csx" customClass="MIPostCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="462"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6I-IB-Csx" id="A7t-Zw-GmX">
@@ -161,7 +161,7 @@
         <!--returnFromCompose-->
         <scene sceneID="c7N-7s-nBe">
             <objects>
-                <viewController title="returnFromCompose" id="PxJ-yf-FRD" customClass="PostingPhotoViewController" sceneMemberID="viewController">
+                <viewController title="returnFromCompose" id="PxJ-yf-FRD" customClass="MIPostingPhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aax-lk-X2L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,7 +228,7 @@
         <!--Details View Controller-->
         <scene sceneID="oYQ-Bc-pcW">
             <objects>
-                <viewController storyboardIdentifier="detailsViewController" id="b2R-0v-Hhm" customClass="DetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailsViewController" id="b2R-0v-Hhm" customClass="MIDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JUu-jj-FeK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,7 +319,7 @@
         <!--Profile View Controller-->
         <scene sceneID="9K9-MW-e0a">
             <objects>
-                <viewController id="zDa-Lh-Isj" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController id="zDa-Lh-Isj" customClass="MIProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OpF-2y-ZxO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,7 +328,7 @@
                                 <rect key="frame" x="0.0" y="146" width="414" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profCell" rowHeight="373" id="PIS-ec-G9e" customClass="ProfCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profCell" rowHeight="373" id="PIS-ec-G9e" customClass="MIProfCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="373"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PIS-ec-G9e" id="Lzc-K0-QOi">

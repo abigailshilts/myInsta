@@ -6,11 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
+#import "MIPost.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailsViewController : UIViewController
-@property Post *passedData;
+@interface MIDetailsViewController : UIViewController
+@property (strong, nonatomic) MIPost *passedData;
 @end
 
 NS_ASSUME_NONNULL_END

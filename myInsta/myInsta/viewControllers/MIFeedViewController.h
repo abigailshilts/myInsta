@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FeedViewController : UIViewController
+@interface MIFeedViewController : UIViewController
 
 @end
 

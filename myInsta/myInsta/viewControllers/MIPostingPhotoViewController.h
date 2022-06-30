@@ -9,10 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostingPhotoViewController : UIViewController
+@interface MIPostingPhotoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *postImg;
 @property (weak, nonatomic) IBOutlet UITextField *caption;
-@property UIImage *imgForPost;
+@property (weak, nonatomic) UIImage *imgForPost;
 @end
 
 NS_ASSUME_NONNULL_END

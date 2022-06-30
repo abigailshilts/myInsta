@@ -4,22 +4,22 @@
 //
 //  Created by Abigail Shilts on 6/27/22.
 //
-
-#import "FeedViewController.h"
+#import "MIDetailsViewController.h"
+#import "MIFeedViewController.h"
 #import <Parse/Parse.h>
+#import "MIPostCell.h"
+#import "MIPost.h"
 #import "SceneDelegate.h"
-#import "PostCell.h"
-#import "Post.h"
+#import "stringsList.h"
 #import "UIImageView+AFNetworking.h"
-#import "DetailsViewController.h"
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MIFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray<Post *> *arrayOfPosts;
+@property (nonatomic, strong) NSArray<MIPost *> *arrayOfPosts;
 @property (strong, nonatomic) UIRefreshControl*refreshControl;
 @end
 
-@implementation FeedViewController
+@implementation MIFeedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,25 +27,27 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"headerViewIdentifier"];
+    [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:headerViewId];
     
+    // populates arrayOfPosts
     [self query];
     
+    // creates refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(query) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
-    // Do any additional setup after loading the view.
 }
 - (IBAction)postPhoto:(id)sender {
-    [self performSegueWithIdentifier:@"postPhoto" sender:nil];
+    [self performSegueWithIdentifier:postPhoto sender:nil];
 }
 
 -(void)query {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query orderByDescending:@"createdAt"];
-    [query includeKey:@"author"];
+    // creates query
+    PFQuery *query = [PFQuery queryWithClassName:postStr];
+    [query orderByDescending:createdAt];
+    [query includeKey:authStr];
     if (self.arrayOfPosts != nil){
-        [query whereKey:@"createdAt" lessThan:self.arrayOfPosts[self.arrayOfPosts.count-1].createdAt];
+        [query whereKey:createdAt lessThan:self.arrayOfPosts[self.arrayOfPosts.count-1].createdAt];
     }
     query.limit = 20;
 
@@ -59,17 +61,18 @@
             }
             [self.tableView reloadData];
         } else {
-            NSLog(@"%@", error.localizedDescription);
+            NSLog(makeStr, error.localizedDescription);
         }
         [self.refreshControl endRefreshing];
     }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"postCell" forIndexPath:indexPath];
+    MIPostCell *cell = [tableView dequeueReusableCellWithIdentifier:postCell forIndexPath:indexPath];
     
-    Post *post = self.arrayOfPosts[indexPath.section];
+    MIPost *post = self.arrayOfPosts[indexPath.section];
     
+    // sets cell properties to post properties
     NSString *link = post.image.url;
     NSURL *url = [NSURL URLWithString:link];
     cell.caption.text = post.caption;
@@ -88,11 +91,13 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"headerViewIdentifier"];
-    Post *post =  self.arrayOfPosts[section];
+    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewId];
+    MIPost *post = self.arrayOfPosts[section];
     PFUser *user = post.author;
-    NSString *username = [user.username stringByAppendingString:@"~"];
-    NSString *whenMade = [NSString stringWithFormat:@"%@", post.createdAt];
+    
+    // creates header for each section
+    NSString *username = [user.username stringByAppendingString:tild];
+    NSString *whenMade = [NSString stringWithFormat:makeStr, post.createdAt];
     header.textLabel.text = [username stringByAppendingString:whenMade];
     return header;
 }
@@ -102,17 +107,19 @@
 }
 
 - (IBAction)logout:(id)sender {
-    SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SceneDelegate *mySceneDelegate = (SceneDelegate * )
+        UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStr bundle:nil];
     UIViewController *loginViewController =
-        [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [storyboard instantiateViewControllerWithIdentifier:logViewController];
     mySceneDelegate.window.rootViewController = loginViewController;
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {}];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
     forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == (self.arrayOfPosts.count - 2)){
+    // detirmines if more cells need to be loaded
+    if (indexPath.section == (self.arrayOfPosts.count - 2)){
         [self query];
     }
 }
@@ -121,11 +128,13 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if (![segue.identifier isEqualToString:@"postPhoto"]){
+    
+    // sends information for populating detailsview
+    if (![segue.identifier isEqualToString:postPhoto]){
         NSIndexPath *senderIndex = [self.tableView indexPathForCell: sender];
         UINavigationController *navigationVC = [segue destinationViewController];
-        DetailsViewController *detailVC = navigationVC.topViewController;
-        Post *post = self.arrayOfPosts[senderIndex.row];
+        MIDetailsViewController *detailVC = navigationVC.topViewController;
+        MIPost *post = self.arrayOfPosts[senderIndex.row];
         detailVC.passedData = post;
     }
 }
