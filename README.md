@@ -39,6 +39,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ![p3p2](htt ps://user-images.githubusercontent.com/58635711/176754439-075eb032-cb09-4262-892f-83d4ac2739ba.gif)
 ![p3p1](https://user-images.githubusercontent.com/58635711/176754458-9bf43569-816a-4586-b786-50e2f5a6b796.gif)
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/58635711/176795152-54d20db9-99a2-4508-8163-eca38f66384f.gif)
 
 GIF created with [Ezgif](https://ezgif.com/gif-to-mov).
 
