@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+#import "stringsList.h"
 
 @interface AppDelegate ()
 
@@ -15,25 +16,32 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(  NSDictionary *)launchOptions {
-
-    ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-
-        configuration.applicationId = @"ggKQqFWf3UOSxwNTz02Diuh4zd7sApTVnO5Tm4cB";
-        configuration.clientKey = @"pAUrKsMvsqUNsm14ylpGbJZUDK7b1NUSd68gF0c0";
-        configuration.server = @"https://parseapi.back4app.com";
+    // Creates connection to the database
+    ParseClientConfiguration *config =
+        [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:keys ofType:plist];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        NSString *key = [dict objectForKey:appID];
+        NSString *secret = [dict objectForKey:clientKey];
+        
+        configuration.applicationId = key;
+        configuration.clientKey = secret;
+        configuration.server = serverLink;
     }];
 
     [Parse initializeWithConfiguration:config];
     
-    PFObject *profile = [PFObject objectWithClassName:@"profile"];
-    profile[@"username"] = @"as123";
-    profile[@"screenName"] = @"Abbi Shilts";
-    profile[@"followers"] = @500;
+    // builds an object
+    PFObject *profile = [PFObject objectWithClassName:profileStr];
+    profile[usrnameStr] = fillerusr;
+    profile[screennameStr] = namefiller;
+    profile[followersStr] = @500;
     [profile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"Object saved!");
+            NSLog(obSave);
         } else {
-            NSLog(@"Error: %@", error.description);
+            NSLog(errMsg, error.description);
         }
     }];
 
@@ -43,18 +51,12 @@
 #pragma mark - UISceneSession lifecycle
 
 
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
+- (UISceneConfiguration *)application:(UIApplication *)application
+    configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession
+        options:(UISceneConnectionOptions *)options {
     // Called when a new scene session is being created.
     // Use this method to select a configuration to create the new scene with.
     return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
 }
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
-
 
 @end
